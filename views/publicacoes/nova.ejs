@@ -1,0 +1,26 @@
+<%- include('../header') %>
+
+<form method="POST" action="/publicacoes/nova">
+  <div class="form-group"> 
+      <label for="titulo">Titulo</label>
+      <input type="text" name="titulo" class="form-control" >
+    </div>
+  <div class="form-group"> 
+    <label for="categoria">Categoria</label>
+    <select class="form-control" name="categoria">
+      <% categorias.forEach(categoria => { %>
+        <option value="<%= categoria.id%>"><%= categoria.categoria %></option>
+      <% }) %>
+    </select>
+  </div>
+  <div class="form-group"> 
+      <label for="conteudo">Conteudo</label>
+      <textarea type="text" name="conteudo" class="form-control" ></textarea>
+    </div>
+  <button type="submit" class="btn btn-primary" >Salvar</button>
+
+</form>
+
+
+
+<%- include('../footer') %>
